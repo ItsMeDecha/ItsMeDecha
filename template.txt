@@ -1,0 +1,45 @@
+'''{{PAGENAME}}'''  is a pair of [[Equipment|Satanic]] [[Boots|Boots]] found in [[Hero Siege|Hero Siege]].
+<tabber>
+
+100% Quality=
+
+{{#tag:tabber|Level 1=
+{{{!}} class='article-table'
+!Tier
+!Sprite
+!Stats
+!Sockets
+!Damage Types
+!Ability
+{{!}}-
+{{!}}
+{{!}}
+{{!}}
+
+{{!}} 
+{{!}} 
+{{!}}
+{{!}}}
+
+{{!}}-{{!}}
+
+Level 10=
+{{{!}} class=''article-table'
+!Tier
+!Sprite
+!Stats
+!Sockets
+!Damage Types
+!Ability
+{{!}}-
+{{!}}
+{{!}}
+{{!}}
+
+{{!}} 
+{{!}} 
+{{!}} 
+{{!}}}
+}}
+</tabber>
+[[Category:]]

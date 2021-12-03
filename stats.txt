@@ -1,0 +1,27 @@
+Name: Blood Lord's Plate Body
+item 42: 
+10% Attack Power
+10% Ability Power
+880 Armor
+5% cdr
+877 Damage
+840 Energy
+880 Stamina
+5% Health
+10% Damage Reduction
+35% Random Resistance
+35% Random Resistance
+1 Random Stat
+
+eClass.plaguedoctor [INV_CLASS]
+Set: plaguedoctor2 [INV_SET]
+
+2 Min Sockets
+6 Max Sockets
+100 Level Requirement
+
+8000 Sell Price
+Item Tier: S
+poison .DamageType
+e
+12000 Upgrade Cost

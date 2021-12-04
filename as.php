@@ -13,7 +13,7 @@
          
             </script>
     <meta charset="utf-8">
-    <title>Angelic Script v1</title>
+    <title>Angelic Script v1.1</title>
 </head>
 <body>
 <?php
@@ -194,6 +194,8 @@
                                 break;
                                 
                             }
+                            else
+                            $ab=0;
                             
                             
                            // if(!(substr($line2,0,5)=='Abili')||!(substr($line2,0,3)=='Set'))
@@ -624,7 +626,7 @@
                      $okej=$x;
                      $npi=explode(' ',$okej);
                      $sArray[14]=$npi[0]." ".$npi[1];
-                     $s10Array[14]=number_format(ceil($npi[0] * 2.4), 0)."% ".$npi[1];
+                     $s10Array[14]=number_format(ceil($npi[0] * 2.25), 0)."% ".$npi[1];
                  }
          
                  if(preg_match('/\d+% Attack Speed/',$x))
@@ -635,7 +637,7 @@
                      $okej=$x;
                      $npi=explode(' ',$okej);
                      $sArray[15]=$npi[0]." ".$npi[1]." ".$npi[2];
-                     $s10Array[15]=ceil(number_format($npi[0] * 2.35))."% ".$npi[1]." ".$npi[2];
+                     $s10Array[15]=number_format(ceil($npi[0] * 2.35), 0)."% ".$npi[1]." ".$npi[2];
                  }
          
                  if(preg_match('/\d+% Ability Power/',$x))
@@ -659,7 +661,7 @@
                      $s10Array[18]=$x;
                  }
          
-                 if(preg_match('/\d+% Health/',$x))
+                 if(preg_match('/\d+% Health/',$x)&&(preg_match('/\d+.\d+% Health Per Second/',$x)==false)&&(preg_match('/\d+% Health Per Second/',$x)==false))
                  {
                      //echo $x[0];
                      //$sArray[19]=$x;
@@ -699,8 +701,8 @@
                      $npi=array();
                      $okej=$x;
                      $npi=explode(' ',$okej);
-                     $sArray[22]=$npi[0]." ".$npi[1];
-                     $s10Array[22]=number_format(ceil($npi[0] * 2.35), 0)."% ".$npi[1];
+                     $sArray[22]=$npi[0]." ".$npi[1]." ".$npi[2];
+                     $s10Array[22]=number_format(ceil($npi[0] * 2.35), 0)."% ".$npi[1]." ".$npi[2];
                  }
          
                  if(preg_match('/\d+ Damage Return/',$x))
@@ -710,8 +712,8 @@
                      $npi=array();
                      $okej=$x;
                      $npi=explode(' ',$okej);
-                     $sArray[23]=number_format($npi[0])." ".$npi[1];
-                     $s10Array[23]=number_format(ceil($npi[0] * 2.35), 0)." ".$npi[1];
+                     $sArray[23]=number_format($npi[0])." ".$npi[1]." ".$npi[2];
+                     $s10Array[23]=number_format(ceil($npi[0] * 2.35), 0)." ".$npi[1]." ".$npi[2];
                  }
          
                  if(preg_match('/\d+% Damage Return/',$x))
@@ -721,13 +723,13 @@
                      $npi=array();
                      $okej=$x;
                      $npi=explode(' ',$okej);
-                     $sArray[24]=$npi[0]." ".$npi[1];
-                     $s10Array[24]=number_format(ceil($npi[0] * 2.4), 0)."% ".$npi[1];
+                     $sArray[24]=$npi[0]." ".$npi[1]." ".$npi[2];
+                     $s10Array[24]=number_format(ceil($npi[0] * 2.4), 0)."% ".$npi[1]." ".$npi[2];
                  }
          
                  if(preg_match('/\d+ Damage/',$x)&&(preg_match('/\d+ Damage Return/',$x)==false)&&(preg_match('/\d+ Elemental Damage/',$x)==false))
                  {
-                     //echo $x[0];
+                     //echo $x;
                      //$sArray[25]=$x;
                      $npi=array();
                      $okej=$x;
@@ -736,7 +738,7 @@
                      $num=$npi[0];
                     // echo $npi[0];
                      $sArray[25]=number_format($npi[0])." ".$npi[1];
-                     $s10Array[25]=ceil(($num * 2.35))." ".$npi[1];
+                     $s10Array[25]=number_format(ceil(($num * 2.4)), 0)." ".$npi[1];
                  }
          
                  if(preg_match('/\d+% Damage/',$x)&&(preg_match('/\d+% Damage Return/',$x)==false)&&(preg_match('/\d+% Elemental Damage/',$x)==false)&&(preg_match('/\d+% Damage Reduction/', $x)==false))
@@ -747,7 +749,7 @@
                      $okej=$x;
                      $npi=explode(' ',$okej);
                      $sArray[26]=$npi[0]." ".$npi[1];
-                     $s10Array[26]=number_format(ceil($npi[0] * 2.4), 0)."% ".$npi[1];
+                     $s10Array[26]=number_format(ceil($npi[0] * 2.35), 0)."% ".$npi[1];
                  }
          
                  if(preg_match('/\d+% cdr/',$x))
@@ -815,7 +817,7 @@
                      $okej=$x;
                      $npi=explode(' ',$okej);
                      $sArray[33]=$npi[0]." ".$npi[1]." ".$npi[2]." ".$npi[3];
-                     $s10Array[33]=number_format(ceil($npi[0] * 3), 1)."% ".$npi[1]." ".$npi[2]." ".$npi[3];
+                     $s10Array[33]=intval(number_format(ceil(substr($npi[0],0,1) * 2.35), 1))."% ".$npi[1]." ".$npi[2]." ".$npi[3];
                  }
          
                  if(preg_match('/\d+.\d+% Mana Per Second/',$x)||(preg_match('/\d+% Mana Per Second/',$x)))
@@ -826,7 +828,7 @@
                      $okej=$x;
                      $npi=explode(' ',$okej);
                      $sArray[34]=$npi[0]." ".$npi[1]." ".$npi[2]." ".$npi[3];
-                     $s10Array[34]=number_format(ceil($npi[0] * 3), 1)."% ".$npi[1]." ".$npi[2]." ".$npi[3];
+                     $s10Array[34]=intval(number_format(ceil($npi[0] * 2.35), 1))."% ".$npi[1]." ".$npi[2]." ".$npi[3];
                  }
          
                  if(preg_match('/\d+ Health Per Kill/',$x))
